@@ -27,6 +27,6 @@ defmodule PortfolioRebalancerWeb.UserProfileController do
       lastName: "Doe"
     }
 
-    render(conn, :show, user_profile: user_profile)
+    json(conn, user_profile)
   end
 end
