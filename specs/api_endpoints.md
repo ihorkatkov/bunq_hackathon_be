@@ -33,6 +33,26 @@ Returns the user's investment profile based on transaction analysis.
 - `404 Not Found`: Profile not found
 - `500 Internal Server Error`: Server error
 
+#### GET /me
+Returns basic user information.
+
+**Request**
+- Headers: 
+  - `X-API-Key`: User API key
+
+**Response**
+```json
+{
+  "firstName": "John",
+  "lastName": "Doe"
+}
+```
+
+**Status Codes**
+- `200 OK`: User information successfully retrieved
+- `401 Unauthorized`: Invalid API key
+- `500 Internal Server Error`: Server error
+
 ### 2. Portfolio Management
 
 #### GET /portfolio

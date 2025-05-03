@@ -18,6 +18,9 @@ defmodule PortfolioRebalancerWeb.Router do
 
     # Chat Interface
     post "/chat", ChatController, :create_chat
+
+    # User Profile
+    get "/me", UserProfileController, :show_user_profile
   end
 
   scope "/" do
