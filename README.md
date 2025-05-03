@@ -1,9 +1,11 @@
 # Bunq Investment Platform - Backend Specification
 
-AI-powered investment platform that leverages Bunq banking data to create personalized investment profiles and recommendations.
+AI-powered investment platform that leverages Bunq banking data to create personalized investment portfolio rebalancer.
+
+Swagger API: https://bunq-hackathon-billowing-water-3051.fly.dev/swaggerui
 
 ## Executive Summary
-Bunq Investment Coach is an AI-powered investment advisory platform that demystifies investment decisions for everyday banking customers. Developed during a **4-hour hackathon** in partnership with Bunq, this solution analyzes users' transaction histories to create personalized investment profiles and portfolio recommendations. The platform features an intuitive chat interface that allows users to understand and adjust their investment strategies in natural language, making investing accessible to everyone regardless of financial literacy level.
+Bunq Investment Coach is an AI-powered investment advisory platform that demystifies investment decisions for everyday banking customers. Developed during a **4-hour hackathon** in partnership with Bunq, this solution analyzes users' transaction histories to create personalized investment profiles, portfolio recommendations and rebalancer. The platform features an intuitive chat interface that allows users to understand and adjust their investment strategies in natural language, making investing accessible to everyone regardless of financial literacy level.
 
 ## Problem Statement
 Investing remains intimidating and complex for average consumers:
@@ -132,9 +134,3 @@ Based on the provided OpenAPI specification:
 - Basic diversified portfolio recommendations
 - Interactive chat interface that can modify user profiles
 - Clean integration with frontend components
-
-## Hackathon Implementation Plan (4 Hours)
-1. **Hour 1**: Set up project structure and API endpoints
-2. **Hour 2**: Implement Bunq API integration and transaction fetching
-3. **Hour 3**: Create LLM prompts for risk profiling and portfolio suggestions
-4. **Hour 4**: Implement chat interface and finalize integration
