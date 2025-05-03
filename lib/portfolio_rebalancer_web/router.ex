@@ -4,6 +4,7 @@ defmodule PortfolioRebalancerWeb.Router do
   pipeline :api do
     plug :accepts, ["json"]
     plug OpenApiSpex.Plug.PutApiSpec, module: PortfolioRebalancerWeb.ApiSpec
+    plug CORSPlug, origin: "*"
   end
 
   # API v1 routes, require JSON and API key authentication
