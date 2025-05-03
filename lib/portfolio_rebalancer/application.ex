@@ -10,13 +10,15 @@ defmodule PortfolioRebalancer.Application do
     children = [
       PortfolioRebalancerWeb.Telemetry,
       PortfolioRebalancer.Repo,
-      {DNSCluster, query: Application.get_env(:portfolio_rebalancer, :dns_cluster_query) || :ignore},
+      {DNSCluster,
+       query: Application.get_env(:portfolio_rebalancer, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: PortfolioRebalancer.PubSub},
       # Start the Finch HTTP client for sending emails
       {Finch, name: PortfolioRebalancer.Finch},
       # Start a worker by calling: PortfolioRebalancer.Worker.start_link(arg)
       # {PortfolioRebalancer.Worker, arg},
       # Start to serve requests, typically the last entry
+      PortfolioRebalancer.Orchestrator,
       PortfolioRebalancerWeb.Endpoint
     ]
 

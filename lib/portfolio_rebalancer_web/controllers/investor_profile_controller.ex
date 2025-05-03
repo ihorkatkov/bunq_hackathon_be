@@ -16,11 +16,16 @@ defmodule PortfolioRebalancerWeb.InvestorProfileController do
   Returns a hardcoded investor profile.
   """
   def show_investor_profile(conn, _params) do
+    %{
+      "risk_profile" => risk_profile,
+      "risk_score" => risk_score
+    } = PortfolioRebalancer.Orchestrator.get_investment_profile()
+
     profile = %{
       userId: "550e8400-e29b-41d4-a716-446655440000",
-      riskBucket: "Balanced",
-      riskScore: 0.65,
-      lastUpdated: "2023-04-12T15:30:45Z"
+      riskBucket: risk_profile,
+      riskScore: risk_score,
+      lastUpdated: Date.utc_today() |> Date.to_string()
     }
 
     json(conn, profile)

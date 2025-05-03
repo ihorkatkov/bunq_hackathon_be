@@ -4,8 +4,6 @@ defmodule PortfolioRebalancerWeb.UserProfileController do
 
   alias PortfolioRebalancerWeb.Schemas.UserProfile
 
-  action_fallback PortfolioRebalancerWeb.ErrorJSON
-
   operation(:show_user_profile,
     tags: ["Profile Management"],
     summary: "Get user profile",

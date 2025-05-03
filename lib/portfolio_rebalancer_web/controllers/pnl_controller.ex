@@ -19,22 +19,22 @@ defmodule PortfolioRebalancerWeb.PnlController do
   defp generate_pnl_data(date) do
     {_last_balance, pnl_data} =
       Enum.reduce(
-        0..29,
+        -29..0,
         {%{balance: 10000.00, netReturn: 0.015}, []},
         fn i, {last_balance, acc} ->
           random = -3..5 |> Enum.map(fn x -> x * 0.0001 end)
           coef = Enum.random(random)
 
           next_balance = %{
-            date: Date.to_string(Date.add(date, -i)),
-            balance: last_balance.balance + last_balance.balance * (i * coef),
-            netReturn: i * coef
+            date: Date.to_string(Date.add(date, i)),
+            balance: last_balance.balance + last_balance.balance * (abs(i) * coef),
+            netReturn: abs(i) * coef
           }
 
           {next_balance, [next_balance | acc]}
         end
       )
 
-    pnl_data |> Enum.reverse()
+    Enum.reverse(pnl_data)
   end
 end
