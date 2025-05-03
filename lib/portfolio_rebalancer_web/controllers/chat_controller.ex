@@ -30,7 +30,7 @@ defmodule PortfolioRebalancerWeb.ChatController do
         userId: "550e8400-e29b-41d4-a716-446655440000",
         riskBucket: "Conservative",
         riskScore: 0.42,
-        lastUpdated: "2023-04-12T15:45:30Z"
+        lastUpdated: Date.utc_today() |> Date.to_string()
       },
       updatedPortfolio: %{
         userId: "550e8400-e29b-41d4-a716-446655440000",
@@ -46,7 +46,7 @@ defmodule PortfolioRebalancerWeb.ChatController do
             units: 16.99,
             currency: "USD",
             market: "US",
-            priceDate: "2023-04-12",
+            priceDate: Date.utc_today() |> Date.to_string(),
             expectedYield: 0.068
           },
           %{
@@ -58,7 +58,7 @@ defmodule PortfolioRebalancerWeb.ChatController do
             units: 69.11,
             currency: "USD",
             market: "US",
-            priceDate: "2023-04-12",
+            priceDate: Date.utc_today() |> Date.to_string(),
             expectedYield: 0.042
           },
           %{
@@ -70,11 +70,11 @@ defmodule PortfolioRebalancerWeb.ChatController do
             units: 5.41,
             currency: "USD",
             market: "US",
-            priceDate: "2023-04-12",
+            priceDate: Date.utc_today() |> Date.to_string(),
             expectedYield: 0.015
           }
         ],
-        lastUpdated: "2023-04-12T15:45:30Z"
+        lastUpdated: Date.utc_today() |> Date.to_string()
       }
     }
 

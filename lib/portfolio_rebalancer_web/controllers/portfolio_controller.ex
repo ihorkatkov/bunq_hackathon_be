@@ -16,8 +16,8 @@ defmodule PortfolioRebalancerWeb.PortfolioController do
   def show_portfolio(conn, _params) do
     portfolio = %{
       userId: "550e8400-e29b-41d4-a716-446655440000",
-      totalBalance: 10000.00,
-      rebalanceFrequencyDays: 90,
+      totalBalance: PortfolioRebalancer.Orchestrator.get_balance(),
+      rebalanceFrequencyDays: 30,
       assets: [
         %{
           symbol: "VTI",
