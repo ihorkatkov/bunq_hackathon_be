@@ -56,7 +56,7 @@ defmodule PortfolioRebalancerWeb.PortfolioController do
           expectedYield: 0.015
         }
       ],
-      lastUpdated: "2023-04-12T15:30:45Z"
+      lastUpdated: DateTime.utc_now() |> DateTime.to_iso8601()
     }
 
     json(conn, portfolio)
