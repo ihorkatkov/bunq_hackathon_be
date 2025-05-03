@@ -22,6 +22,9 @@ defmodule PortfolioRebalancerWeb.Router do
 
     # User Profile
     get "/me", UserProfileController, :show_user_profile
+
+    # PnL
+    get "/pnl", PnlController, :get_pnl
   end
 
   scope "/" do
