@@ -3,7 +3,7 @@
 AI-powered investment platform that leverages Bunq banking data to create personalized investment profiles and recommendations.
 
 ## Executive Summary
-Bunq Investment Coach is an AI-powered investment advisory platform that demystifies investment decisions for everyday banking customers. Developed during a one-day hackathon in partnership with Bunq, this solution analyzes users' transaction histories to create personalized investment profiles and portfolio recommendations. The platform features an intuitive chat interface that allows users to understand and adjust their investment strategies in natural language, making investing accessible to everyone regardless of financial literacy level.
+Bunq Investment Coach is an AI-powered investment advisory platform that demystifies investment decisions for everyday banking customers. Developed during a **4-hour hackathon** in partnership with Bunq, this solution analyzes users' transaction histories to create personalized investment profiles and portfolio recommendations. The platform features an intuitive chat interface that allows users to understand and adjust their investment strategies in natural language, making investing accessible to everyone regardless of financial literacy level.
 
 ## Problem Statement
 Investing remains intimidating and complex for average consumers:
@@ -27,6 +27,7 @@ Visualizing potential returns to make abstract concepts tangible
 
 ### Technology Stack
 - **Authentication**: API Key-based (X-API-Key header)
+- **LLM Integration**: Using LLMs for risk profiling and portfolio suggestions
 
 ### Core Components
 
@@ -36,20 +37,17 @@ Visualizing potential returns to make abstract concepts tangible
 - JSON-based request/response formats
 - Error handling with standardized error codes
 
-#### 2. Data Processing Engine
-- Transaction data ingestion from Bunq API
-- Data cleaning and normalization
-- Feature extraction for ML models
+#### 2. Transaction Processing
+- Simple transaction data ingestion from Bunq API
+- Basic data cleaning and categorization
 
-#### 3. ML Analysis System
-- Risk profile generation based on transaction patterns
-- Portfolio optimization algorithms
-- Return projection models
-- CAGR and yield prediction
+#### 3. LLM-based Analysis
+- **Risk Profile Agent**: Analyzes transaction data to determine risk profile and score
+- **Portfolio Suggestion Agent**: Uses risk profile, balance, and available assets to suggest a portfolio
+- No complex ML models or algorithms
 
 #### 4. Chat Interface Backend
-- Natural language processing for user requests
-- Context-aware response generation
+- Simple context-aware response generation
 - Portfolio and profile update capabilities
 
 ### API Endpoints
@@ -112,21 +110,31 @@ Based on the provided OpenAPI specification:
 
 ### Implementation Considerations
 
+#### LLM Integration
+- Simplified prompt engineering for risk profile generation
+- Structured output format for portfolio recommendations
+- Use of pre-defined templates for consistent results
+
 #### Security
 - API key validation and management
 
 #### Error Handling
 - Standardized error responses with appropriate HTTP status codes
-- Detailed logging for debugging
-- Graceful degradation for service dependencies
+- Minimal logging for debugging
 
 #### Integration Requirements
 - Bunq API connection for transaction data
-- Market data provider for asset pricing
+- Basic asset information for portfolio suggestions
 
 ## Success Criteria
 - Functional API with all specified endpoints
-- Realistic investment profiles based on transaction data
-- Diversified portfolio recommendations
+- Simple but realistic investment profiles based on transaction data
+- Basic diversified portfolio recommendations
 - Interactive chat interface that can modify user profiles
 - Clean integration with frontend components
+
+## Hackathon Implementation Plan (4 Hours)
+1. **Hour 1**: Set up project structure and API endpoints
+2. **Hour 2**: Implement Bunq API integration and transaction fetching
+3. **Hour 3**: Create LLM prompts for risk profiling and portfolio suggestions
+4. **Hour 4**: Implement chat interface and finalize integration
