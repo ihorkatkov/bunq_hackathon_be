@@ -23,7 +23,7 @@ defmodule PortfolioRebalancer.Agents.InvestmentProfile do
         verbose: false
       })
       |> LLMChain.add_message(Message.new_system!(promt(transactions)))
-      |> LLMChain.run()
+      |> LLMChain.run(mode: :until_success)
 
     Jason.decode!(ChainResult.to_string!(chain))
   end
@@ -37,7 +37,7 @@ defmodule PortfolioRebalancer.Agents.InvestmentProfile do
     Here are the transactions:
     #{inspect(transactions)}
 
-    Response format:
+    Response format. Reply only with the JSON object and nothgin else:
     {
       "risk_profile": "Conservative",
       "risk_score": 0.1

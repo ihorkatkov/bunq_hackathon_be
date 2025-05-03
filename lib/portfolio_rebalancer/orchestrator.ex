@@ -22,8 +22,10 @@ defmodule PortfolioRebalancer.Orchestrator do
     {:ok, %{investment_profile: nil}, {:continue, :init}}
   end
 
+  @spec handle_continue(:init, %{:investment_profile => any(), optional(any()) => any()}) ::
+          {:noreply, %{:investment_profile => any(), optional(any()) => any()}}
   def handle_continue(:init, state) do
-    transactions = []
+    transactions = Jason.encode!(PortfolioRebalancer.Bunq.get_transactions())
     investment_profile = InvestmentProfile.get_investment_profile!(transactions)
 
     {:noreply, %{state | investment_profile: investment_profile}}
