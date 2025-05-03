@@ -20,5 +20,6 @@ defmodule PortfolioRebalancerWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :portfolio_rebalancer
+  # Define Gettext backend using the new Gettext.Backend API
+  use Gettext.Backend, otp_app: :portfolio_rebalancer
 end

@@ -17,7 +17,7 @@ config :portfolio_rebalancer, PortfolioRebalancer.Repo,
 # you can enable the server option below.
 config :portfolio_rebalancer, PortfolioRebalancerWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "WMKbqNjhFGY2DgpLLS8BtDCgL6PQRM5FN8t+pQ5kx1BP0gmzIdYgSlUNM6QVPsSr",
+  secret_key_base: "WeKbqNjhFGY2DgpLLS8BtDCgL6PQRM5FN8t+pQ5kx1BP0gmzIdYgSlUNM6QVPsSr",
   server: false
 
 # In test we don't send emails.

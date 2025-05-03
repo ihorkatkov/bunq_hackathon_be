@@ -49,6 +49,8 @@ config :portfolio_rebalancer, PortfolioRebalancerWeb.Endpoint,
 # configured to run both http and https servers on
 # different ports.
 
+config :open_api_spex, :cache_adapter, OpenApiSpex.Plug.NoneCache
+
 # Enable dev routes for dashboard and mailbox
 config :portfolio_rebalancer, dev_routes: true
 
